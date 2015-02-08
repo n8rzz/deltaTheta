@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entrydate</th>
+      <th>Ticker</th>
+      <th>B/S</th>
+      <th>C/P</th>
+      <th>Contracts</th>
+      <th>Size</th>
+      <th>Expiration</th>
+      <th>Strike</th>
+      <th>Entryprice</th>
+      <th>Entryfee</th>
+      <th>Exitprice</th>
+      <th>Exitfee</th>
+      <th>Exitdate</th>
+      <th>Open</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @options.each do |option| %>
+      <tr>
+        <td><%= option.entrydate.to_s(:trade_date) %></td>
+        <td><%= option.ticker %></td>
+        <td><%= option.side %></td>
+        <td><%= option.optiontype %></td>
+        <td><%= option.contracts %></td>
+        <td><%= option.size %></td>
+        <td><%= option.expiration.to_s(:exp_date) %></td>
+        <td><%= option.strike %></td>
+        <td><%= option.entryprice %></td>
+        <td><%= option.entryfee %></td>
+        <td><%= option.exitprice %></td>
+        <td><%= option.exitfee %></td>
+        <td><%= option.exitdate.to_s(:trade_date) %></td>
+        <td><%= option.isactive %></td>
+        <td><%= link_to 'Show', option %></td>
+        <td><%= link_to 'Edit', edit_option_path(option) %></td>
+        <td><%= link_to 'Destroy', option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Option', new_option_path %>

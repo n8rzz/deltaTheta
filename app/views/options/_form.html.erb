@@ -1,0 +1,75 @@
+<%= form_for(@option) do |f| %>
+  <% if @option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@option.errors.count, "error") %> prohibited this option from being saved:</h2>
+
+      <ul>
+      <% @option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrydate %><br>
+    <%= f.date_select :entrydate %>
+  </div>
+  <div class="field">
+    <%= f.label :ticker %><br>
+    <%= f.text_field :ticker %>
+  </div>
+  <div class="field">
+<!--     <%= f.label :side %><br>
+    <%= f.text_field :side %> -->
+    <%= f.radio_button :side, "Call" %>  <%= f.label :side_call, "Call" %>
+    <%= f.radio_button :side, "Put" %>  <%= f.label :side_put, "Put" %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :optiontype, "Buy" %>  <%= f.label :optiontype_buy, "Buy" %>
+    <%= f.radio_button :optiontype, "Sell" %>  <%= f.label :optiontype_sell, "Sell" %>
+  </div>
+  <div class="field">
+    <%= f.label :contracts, "Contract(s)" %><br>
+    <%= f.number_field :contracts %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.number_field :size, :value => '100' %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration %><br>
+    <%= f.date_select :expiration %>
+  </div>
+  <div class="field">
+    <%= f.label :strike %><br>
+    <%= f.text_field :strike %>
+  </div>
+  <div class="field">
+    <%= f.label :entryprice %><br>
+    <%= f.text_field :entryprice %>
+  </div>
+  <div class="field">
+    <%= f.label :entryfee %><br>
+    <%= f.text_field :entryfee %>
+  </div>
+  <div class="field">
+    <%= f.label :exitprice %><br>
+    <%= f.text_field :exitprice %>
+  </div>
+  <div class="field">
+    <%= f.label :exitfee %><br>
+    <%= f.text_field :exitfee %>
+  </div>
+  <div class="field">
+    <%= f.label :exitdate %><br>
+    <%= f.date_select :exitdate %>
+  </div>
+<!--   <div class="field">
+    <%= f.label :isactive %><br>
+    <%= f.check_box :isactive %>
+  </div> -->
+  <div class="actions">
+    <%= f.submit "Add Option" %>
+  </div>
+<% end %>

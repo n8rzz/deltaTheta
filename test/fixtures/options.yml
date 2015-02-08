@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: MyString
+  side: MyString
+  optiontype: MyString
+  contracts: 1
+  size: 1
+  expiration: 2015-02-08 14:34:23
+  strike: 9.99
+  entryprice: 9.99
+  entryfee: 9.99
+  exitprice: 9.99
+  exitfee: 9.99
+  entrydate: 2015-02-08 14:34:23
+  exitdate: 2015-02-08 14:34:23
+  isactive: false
+
+two:
+  ticker: MyString
+  side: MyString
+  optiontype: MyString
+  contracts: 1
+  size: 1
+  expiration: 2015-02-08 14:34:23
+  strike: 9.99
+  entryprice: 9.99
+  entryfee: 9.99
+  exitprice: 9.99
+  exitfee: 9.99
+  entrydate: 2015-02-08 14:34:23
+  exitdate: 2015-02-08 14:34:23
+  isactive: false

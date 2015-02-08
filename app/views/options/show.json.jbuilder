@@ -1,0 +1,1 @@
+json.extract! @option, :id, :ticker, :side, :optiontype, :contracts, :size, :expiration, :strike, :entryprice, :entryfee, :exitprice, :exitfee, :entrydate, :exitdate, :isactive, :created_at, :updated_at

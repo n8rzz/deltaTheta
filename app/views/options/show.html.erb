@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @option.ticker %>
+</p>
+
+<p>
+  <strong>Side:</strong>
+  <%= @option.side %>
+</p>
+
+<p>
+  <strong>Optiontype:</strong>
+  <%= @option.optiontype %>
+</p>
+
+<p>
+  <strong>Contracts:</strong>
+  <%= @option.contracts %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @option.size %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @option.expiration %>
+</p>
+
+<p>
+  <strong>Strike:</strong>
+  <%= @option.strike %>
+</p>
+
+<p>
+  <strong>Entryprice:</strong>
+  <%= @option.entryprice %>
+</p>
+
+<p>
+  <strong>Entryfee:</strong>
+  <%= @option.entryfee %>
+</p>
+
+<p>
+  <strong>Exitprice:</strong>
+  <%= @option.exitprice %>
+</p>
+
+<p>
+  <strong>Exitfee:</strong>
+  <%= @option.exitfee %>
+</p>
+
+<p>
+  <strong>Entrydate:</strong>
+  <%= @option.entrydate %>
+</p>
+
+<p>
+  <strong>Exitdate:</strong>
+  <%= @option.exitdate %>
+</p>
+
+<p>
+  <strong>Isactive:</strong>
+  <%= @option.isactive %>
+</p>
+
+<%= link_to 'Edit', edit_option_path(@option) %> |
+<%= link_to 'Back', options_path %>
