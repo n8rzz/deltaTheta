@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Options</h1>
+<h1>Options Transactions</h1>
 
-<table>
+<table cellpadding="2px" cellspacing="0" border="1">
   <thead>
     <tr>
       <th>Entrydate</th>
@@ -18,8 +18,8 @@
       <th>Exitprice</th>
       <th>Exitfee</th>
       <th>Exitdate</th>
-      <th>Open</th>
-      <th colspan="3"></th>
+      <th>Status</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -33,16 +33,20 @@
         <td><%= option.contracts %></td>
         <td><%= option.size %></td>
         <td><%= option.expiration.to_s(:exp_date) %></td>
-        <td><%= option.strike %></td>
-        <td><%= option.entryprice %></td>
-        <td><%= option.entryfee %></td>
-        <td><%= option.exitprice %></td>
-        <td><%= option.exitfee %></td>
+        <td><%= number_with_precision(option.strike, precision: 2) %></td>
+        <td><%= number_with_precision(option.entryprice, precision: 3) %></td>
+        <td><%= number_with_precision(option.entryfee, precision: 2) %></td>
+        <td><%= number_with_precision(option.exitprice, precision: 3) %></td>
+        <td><%= number_with_precision(option.exitfee, precision: 2) %></td>
         <td><%= option.exitdate.to_s(:trade_date) %></td>
-        <td><%= option.isactive %></td>
+        <% if option.isactive %>
+          <td>Open</td>
+        <% else %>
+          <td>Closed</td>
+        <% end %>
         <td><%= link_to 'Show', option %></td>
         <td><%= link_to 'Edit', edit_option_path(option) %></td>
-        <td><%= link_to 'Destroy', option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', option, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,74 +1,67 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_option_path(@option) %> |
+<%= link_to 'Back', options_path %>
 
-<p>
-  <strong>Ticker:</strong>
+<ul>
+  <li><strong>Ticker:</strong>
   <%= @option.ticker %>
-</p>
-
-<p>
-  <strong>Side:</strong>
-  <%= @option.side %>
-</p>
-
-<p>
-  <strong>Optiontype:</strong>
-  <%= @option.optiontype %>
-</p>
-
-<p>
-  <strong>Contracts:</strong>
-  <%= @option.contracts %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @option.size %>
-</p>
-
-<p>
-  <strong>Expiration:</strong>
-  <%= @option.expiration %>
-</p>
-
-<p>
-  <strong>Strike:</strong>
-  <%= @option.strike %>
-</p>
-
-<p>
-  <strong>Entryprice:</strong>
-  <%= @option.entryprice %>
-</p>
-
-<p>
-  <strong>Entryfee:</strong>
-  <%= @option.entryfee %>
-</p>
-
-<p>
-  <strong>Exitprice:</strong>
-  <%= @option.exitprice %>
-</p>
-
-<p>
-  <strong>Exitfee:</strong>
-  <%= @option.exitfee %>
-</p>
-
-<p>
-  <strong>Entrydate:</strong>
-  <%= @option.entrydate %>
-</p>
-
-<p>
-  <strong>Exitdate:</strong>
-  <%= @option.exitdate %>
-</p>
-
-<p>
-  <strong>Isactive:</strong>
-  <%= @option.isactive %>
-</p>
-
+  </li>
+  <li>
+    <strong>Side:</strong>
+    <%= @option.side %>
+  </li>
+  <li>
+    <strong>Optiontype:</strong>
+    <%= @option.optiontype %>
+  </li>
+  <li>
+    <strong>Contracts:</strong>
+    <%= @option.contracts %>
+  </li>
+  <li>
+    <strong>Size:</strong>
+    <%= @option.size %>
+  </li>
+  <li>
+    <strong>Expiration:</strong>
+    <%= @option.expiration.to_s(:exp_date) %>
+  </li>
+  <li>
+    <strong>Strike:</strong>
+    <%= @option.strike %>
+  </li>
+  <li>
+    <strong>Entryprice:</strong>
+    <%= @option.entryprice %>
+  </li>
+  <li>
+    <strong>Entryfee:</strong>
+    <%= @option.entryfee %>
+  </li>
+  <li>
+    <strong>Exitprice:</strong>
+    <%= @option.exitprice %>
+  </li>
+  <li>
+    <strong>Exitfee:</strong>
+    <%= @option.exitfee %>
+  </li>
+  <li>
+    <strong>Entrydate:</strong>
+    <%= @option.entrydate.to_s(:trade_date) %>
+  </li>
+  <li>
+    <strong>Exitdate:</strong>
+    <%= @option.exitdate.to_s(:trade_date) %>
+  </li>
+  <li>
+    <strong>Status:</strong>
+    <% if @option.isactive %>
+      Open
+    <% else %>
+      Closed
+    <% end %>
+  </li>
+</ul>
 <%= link_to 'Edit', edit_option_path(@option) %> |
 <%= link_to 'Back', options_path %>

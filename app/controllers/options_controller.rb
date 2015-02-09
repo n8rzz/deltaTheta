@@ -55,11 +55,15 @@ class OptionsController < ApplicationController
   # DELETE /options/1.json
   def destroy
     @option.destroy
-    respond_to do |format|
-      format.html { redirect_to options_url, notice: 'Option was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to options_url, notice: 'Option was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
+    Option.find(params[:id]).destroy
+    flash[:success] = "Option Deleted"
+    redirect_to options_path
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
